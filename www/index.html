@@ -41,7 +41,17 @@
         });
         init();
     });
-    
+
+       $(function(){
+       $("#btnA").on("click",function(e) {
+       console.log("Click");
+       });
+       $("#check1").prop("checked",isTouch);
+       $("#check1").on("change",function(e){
+        isTouch = $("#check1").prop("checked");
+        console.log(isTouch);
+        });
+      });
     function rgbToColor(r,g,b){
         return "#" + hex02(r)+hex02(g)+hex02(b);
     }
@@ -231,16 +241,6 @@
     <div id="remain">Remaining time</div>
     <div id="time">Time</div>
     <button id="btnA">ButtonA</button> 
-     $(function(){
-     $("#btnA").on("click",function(e) {
-     console.log("Click");
-     });
-     $("#check1").prop("checked",isTouch);
-     $("#check1").on("change",function(e){
-      isTouch = $("#check1").prop("checked");
-     console.log(isTouch);
-     });
-     });
     <button id="btnB">ButtonB</button>  
     <button id="btnC">ButtonC</button>  
     <input type="number" id="minute" value=3 >
